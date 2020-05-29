@@ -5,6 +5,6 @@ Localization =
 	always_on			= false,
 	title						= "Onslaught",
 	win_message 		= "You Survived? How?",
-	lose_message 	= "You did not survive the Necron Onslaught!",
+	lose_message 	= "You did not survive the Ork Onslaught!",
 	description			= "Players versus endless waves of Orks!"
 }
