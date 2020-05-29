@@ -26,3 +26,4 @@ Load the game and select the "Onslaught" victory condition. It is mutually exclu
 - WAAAAAAGHs may spawn in 'Ard Boyz and a Warboss
 - Higher difficulties will cause WAAAAAAGHs to occur more often
 - Insane difficulty requires players to hold out against almost 10,000 Orks and constant WAAAAAAGHs
+- The original zombie "bite" mechanic has been removed
