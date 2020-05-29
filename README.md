@@ -4,11 +4,13 @@ A custom victory condition for "Dawn of War Dark Crusade 3rd Generation" mod
 Survive against waves of Orks! All player characters must team up against computer players, and survive until they kill enough Orks.
 
 ## THIS IS A MODIFICATION OF THE zombieapocalypse.scar FILE! I DID NOT CREATE THE ORIGINAL FILE.
-## I only created my own version of the victory condition to make it more fun for myself.
+I only created my own version of the victory condition to make it more fun for myself.
 
-# How to install
+# How to install & Use
 Place both files into the Dawn of War Dark Crusade\DOW3G_3_1\Data\scar\winconditions folder
 You must have Dawn of War Dark Crusade 3rd Generation installed.
+
+Load the game and select the "Onslaught" victory condition. It is mutually exclusive, and cannot be mixed with other win conditions.
 
 ## Alterations:
 - Players start with 9999 Requisition and Power
