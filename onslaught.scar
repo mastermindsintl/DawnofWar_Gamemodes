@@ -187,7 +187,7 @@ function ZombieApocalypse_Setup()
 			
 			if (Player_GetRaceName(Player) == "chaos_marine_race") then
 				blueprint_commander = "chaos_squad_lord";
-				blueprint_squad = "chaos_marine_squad";
+				blueprint_squad = "chaos_squad_chaos_terminator";
 				blueprint_builder_squad = "chaos_squad_slave";
 				Player_GrantResearch (Player,"chaos_wargear01");
 				Player_GrantResearch (Player,"chaos_wargear02");
@@ -249,7 +249,7 @@ function ZombieApocalypse_Setup()
 			-- Eldar	
 			elseif (Player_GetRaceName(Player) == "eldar_race") then
 				blueprint_commander = "eldar_squad_farseer";
-				blueprint_squad = "eldar_dire_avenger_squad";
+				blueprint_squad = "eldar_squad_dark_reapers";
 				blueprint_builder_squad = "eldar_squad_bonesinger";
 				Player_GrantResearch (Player,"eldar_bonesinger_ability_research_1");
 				Player_GrantResearch (Player,"eldar_farseer_ability_research");
@@ -301,7 +301,7 @@ function ZombieApocalypse_Setup()
 			-- Inquisition Daemonhunters
 			elseif (Player_GetRaceName(Player) == "inquisition_daemonhunt_race") then
 				blueprint_commander = "inquisition_squad_inquisitor_lord";
-				blueprint_squad = "inquisition_squad_shock_troops";
+				blueprint_squad = "inquisition_squad_grey_knights_terminator";
 				blueprint_builder_squad = "inquisition_squad_archivist";
 				Player_GrantResearch (Player,"inquisition_medikits");
 				Player_GrantResearch (Player,"inquisition_officers_weapons");
@@ -414,6 +414,7 @@ function ZombieApocalypse_Setup()
 			elseif (Player_GetRaceName(Player) == "tyranids_race") then
 				blueprint_commander = "tyranids_squad_hive_tyrant_survival";
 				blueprint_squad = "tyranids_squad_warrior_survival";
+				blueprint_builder_squad = "tyranids_squad_woth";
 				Player_GrantResearch (Player,"tyranids_hivetyrant_implant_research");
 				Player_GrantResearch (Player,"tyranids_hivetyrant_lwhip_bsword_research");
 				Player_GrantResearch (Player,"tyranids_hivetyrant_toxic_miasma_research");
@@ -421,8 +422,7 @@ function ZombieApocalypse_Setup()
 				Player_GrantResearch (Player,"tyranids_warrior_adrenal_glands_research");
 				Player_GrantResearch (Player,"tyranids_warrior_bioplasma_research");
 				Player_GrantResearch (Player,"tyranids_warrior_ext_carapace_research");
-				Player_GrantResearch (Player,"tyranids_warrior_leaping_research");
-				Player_RestrictSquad(Player,"tyranids_squad_woth") 
+				Player_GrantResearch (Player,"tyranids_warrior_leaping_research"); 
 				
 			-- Witch Hunters	
 			elseif (Player_GetRaceName(Player) == "witch_hunters_race") then
@@ -598,9 +598,9 @@ function ZombieApocalypse_MassiveWaves()
 		Util_CreateSquadsAtPosition(g_Player1, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player1), 5);
 	end
 	if (Player2_IsZombie == true) then
-		Util_CreateSquadsAtPosition(g_Player2, "sg_zombie"..g_zombiecount, "ork_squad_slugga", Player_GetStartPosition(g_Player2), 20);
+		Util_CreateSquadsAtPosition(g_Player2, "sg_zombie"..g_zombiecount, "ork_squad_ard_boy", Player_GetStartPosition(g_Player2), 10);
 		Util_CreateSquadsAtPosition(g_Player2, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player2), 5);
-		Util_CreateSquadsAtPosition(g_Player2, "sg_zombie"..g_zombiecount, "ork_squad_ard_boy", Player_GetStartPosition(g_Player2), 5);
+		Util_CreateSquadsAtPosition(g_Player2, "sg_zombie"..g_zombiecount, "ork_squad_looted_tank", Player_GetStartPosition(g_Player2), 2);
 	end
 	if (Player3_IsZombie == true) then
 		Util_CreateSquadsAtPosition(g_Player3, "sg_zombie"..g_zombiecount, "ork_squad_warboss", Player_GetStartPosition(g_Player3), 2);
@@ -609,7 +609,7 @@ function ZombieApocalypse_MassiveWaves()
 		Util_CreateSquadsAtPosition(g_Player4, "sg_zombie"..g_zombiecount, "ork_squad_ard_boy", Player_GetStartPosition(g_Player4), 10);
 	end
 	if (Player5_IsZombie == true) then
-		Util_CreateSquadsAtPosition(g_Player5, "sg_zombie"..g_zombiecount, "ork_squad_slugga", Player_GetStartPosition(g_Player5), 10);
+		Util_CreateSquadsAtPosition(g_Player5, "sg_zombie"..g_zombiecount, "ork_squad_killa_kan", Player_GetStartPosition(g_Player5), 3);
 		Util_CreateSquadsAtPosition(g_Player5, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player5), 5);
 	end
 	if (Player6_IsZombie == true) then
@@ -617,10 +617,13 @@ function ZombieApocalypse_MassiveWaves()
 	end
 	if (Player7_IsZombie == true) then
 		Util_CreateSquadsAtPosition(g_Player7, "sg_zombie"..g_zombiecount, "ork_squad_slugga", Player_GetStartPosition(g_Player7), 10);
-		Util_CreateSquadsAtPosition(g_Player7, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player7), 5);
+		Util_CreateSquadsAtPosition(g_Player7, "sg_zombie"..g_zombiecount, "ork_squad_weirdboy", Player_GetStartPosition(g_Player7), 2);
 	end
-	if (Player8_IsZombie == true) then
-		Util_CreateSquadsAtPosition(g_Player8, "sg_zombie"..g_zombiecount, "ork_squad_slugga", Player_GetStartPosition(g_Player8), 10);
+	if (Player8_IsZombie == true and (Cpu_GetDifficulty(g_DefaultZombies) == AD_Insane)) then
+		Util_CreateSquadsAtPosition(g_Player8, "sg_zombie"..g_zombiecount, "ork_squad_shoota_boy", Player_GetStartPosition(g_Player8), 8);
+		Util_CreateSquadsAtPosition(g_Player8, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player8), 8);
+	elseif (Player8_IsZombie == true) then
+		Util_CreateSquadsAtPosition(g_Player8, "sg_zombie"..g_zombiecount, "ork_squad_slugga", Player_GetStartPosition(g_Player8), 5);
 		Util_CreateSquadsAtPosition(g_Player8, "sg_zombie"..g_zombiecount, "ork_squad_burnaz", Player_GetStartPosition(g_Player8), 5);
 	end
 	Util_MissionTitle("You hear a distant WAAAAAGGH! Get ready...")
