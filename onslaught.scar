@@ -3,16 +3,6 @@
 
 import("ScarUtil.scar");
 
---[[TODO:]]
--- Zombie Setup = CHECK
--- Zombie create = CHECK
--- Check Zombies = CHECK
--- Check Bitten = CHECK
--- Check Lose = CHECK
--- Zombietactics = CHECK
--- Reinforcements = CHECK
--- Large waves = CHECK
-
 function ZombieApocalypse()
 
 	-- How many survivor? Yes, this is the checker for the lose condition.
