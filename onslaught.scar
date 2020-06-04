@@ -318,7 +318,7 @@ function ZombieApocalypse_Setup()
 			elseif (Player_GetRaceName(Player) == "necron_race") then
 				blueprint_commander = "necron_lord_squad";
 				blueprint_squad = "necron_basic_warrior_squad";
-				-- Necrons seem to spawn with scarabs already... Not sure why
+				blueprint_builder_squad = "necron_builder_scarab_squad";
 				Player_GrantResearch (Player,"necron_phylactery_research");
 				Player_GrantResearch (Player,"necron_resurrection_orb_research");
 				Player_GrantResearch (Player,"necron_nightmare_shroud_research");
