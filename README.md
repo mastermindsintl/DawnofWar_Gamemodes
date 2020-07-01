@@ -11,6 +11,8 @@ Place both files into the Dawn of War Dark Crusade\DOW3G_3_1\Data\scar\wincondit
 
 You must have Dawn of War Dark Crusade 3rd Generation installed.
 
+Find it [here](https://www.nexusmods.com/warhammer40000dawnofwar/mods/303)
+
 Load the game and select the "Onslaught" victory condition. It is mutually exclusive, and cannot be mixed with other win conditions.
 ## Alterations:
 
